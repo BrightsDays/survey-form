@@ -1,0 +1,536 @@
+$black: #1A1A1A
+$white: #ffffff
+$gold: #BE8343
+    
+*
+    font-family: 'Jost', sans-serif
+    margin: 0
+    padding: 0
+    box-sizing: border-box
+
+    &:focus
+        outline: none
+
+body
+    background-color: #f5f5f5
+
+.h1,.h3
+    font-weight: bold
+    font-size: 24px
+    line-height: 34px
+    color: $black
+    margin-top: 24px
+
+.h1
+    margin-top: 12px
+
+.h2
+    font-weight: bold
+    font-size: 16px
+    line-height: 23px
+    color: $black
+    margin-top: 24px
+
+.p
+    font-weight: normal
+    font-size: 16px
+    line-height: 23px
+    color: $black
+    margin-top: 24px
+
+    &_white
+        color: $white
+
+.gold
+    font-weight: bold
+    color: $gold
+
+.undergold
+    position: relative
+
+    &::after
+        display: block
+        content: ''
+        position: absolute
+        width: 100%
+        height: 4px
+        background-color: $gold
+        bottom: 1.5px
+        left: 0
+
+.button
+    display: block
+    background: #BE8343
+    border: none
+    border-radius: 24px 16px 16px 16px
+    padding: 9px
+    font-size: 16px
+    font-weight: bold
+    line-height: 23px
+    text-align: center
+    color: $white
+    width: 100%
+    cursor: pointer
+
+    &:hover
+        background: #DE9B53
+
+.wrapper
+    width: 100%
+    padding: 0 16px 40px
+
+.header
+    min-height: 96px
+    background-color: #191919
+    padding: 28px 16px
+    width: 100%
+
+    &__burger
+        position: absolute
+        right: 16px
+        top: 48px
+        width: 24px
+        height: 4px
+        background-color: $gold
+        
+        &::before
+            content: ''
+            display: block
+            position: absolute
+            top: -8px
+            right: 0
+            background-color: $gold
+            width: 24px
+            height: 4px
+
+        &::after
+            content: ''
+            display: block
+            position: absolute
+            bottom: -8px
+            right: 0
+            background-color: $gold
+            width: 24px
+            height: 4px
+
+.nav
+    display: none
+
+.content
+    padding: 0
+
+    &__box
+        background-color: $white
+        border: 1px solid $gold
+        padding: 16px
+        margin-top: 24px
+
+        .p
+            margin-top: 0
+
+        .list
+            list-style: none
+            padding-left: 10px
+
+            &__item
+                position: relative
+                font-weight: bold
+                margin-top: 20px
+                text-indent: -5px
+
+                &::before
+                    position: relative
+                    left: -5px
+                    content: '•'
+
+                &:first-child
+                    margin-top: 0
+
+        &_thin
+            max-width: 640px
+
+.comments
+    &__item
+        margin-top: 24px
+
+        &:nth-child(-n+11)
+            display: none            
+
+    &__ava
+        width: 40px
+        border-radius: 8px
+        float: left
+
+    &__name,&__text
+        padding: 0 0 0 48px
+        margin-top: 10px
+
+    &__date
+        margin-top: 0
+        padding: 0 0 0 48px
+
+.footer
+    text-align: center
+    margin: 10px auto 30px
+
+.survey
+    margin: 24px auto 0px
+    border-radius: 8px
+    max-width: 360px
+
+    &__count
+        border-radius: 8px 8px 0 0
+        background-color: $black
+        padding: 20px
+        display: block
+
+    &__item
+        display: inline-block
+        width: 13.5%
+        height: 8px
+        background-color: #6A6A6A
+
+        &_full
+            background-color: $gold
+
+    &__counter
+        display: inline-block
+        font-weight: bold
+        color: $white
+        margin-left: 15px
+        margin-top: -8px
+        text-align: right
+        width: 12.5%
+
+    &__image
+        padding: 24px 16px
+        min-height: 440px
+        background: linear-gradient(180deg, #111111 9.69%, rgba(17, 17, 17, 0) 49.22%), url(img/sur_1.jpg)
+        background-repeat: no-repeat
+        background-size: 100% auto 
+        background-position: center
+        border-radius: 0 0 8px 8px
+        transition: background .6s
+
+    &__form
+        position: relative
+        background-color: $white
+        padding: 24px 16px
+
+    &__question
+        position: static
+        top: 24px
+        left: 16px
+        font-weight: bold
+        font-size: 16px
+        line-height: 23px
+        margin-bottom: 24px
+        min-height: 100px
+        max-width: 370px
+        display: none
+        transition: all .5s
+
+    &__input
+        cursor: pointer
+        display: block
+        position: relative
+        width: 100%
+        padding: 20px 24px
+        margin-bottom: 24px
+        margin-top: 24px
+
+    &__check,&__label,&__box
+        display: inline-block
+        position: relative
+        z-index: 1
+
+    &__box
+        background: #FFFFFF
+        border: 2px solid $black
+        width: 16px
+        height: 16px
+        border-radius: 50%
+        margin-right: 8px
+        position: relative
+        top: 2px
+
+    &__bg
+        position: absolute
+        top: 0
+        left: 0
+        width: 100%
+        height: 100%
+        background: #F5F5F5
+        border-radius: 8px
+        padding: 20px 46px
+        color: #6A6A6A
+        font-weight: bold
+        font-size: 16px
+        line-height: 23px
+
+    &__check
+        position: absolute
+        top: 25px
+        appearance: none
+
+        &::-ms-expand
+            display: none
+
+        &:checked + .survey__box
+            border: 2px solid $gold
+
+            &::before
+                position: absolute
+                display: block
+                content: ''
+                width: 8px
+                height: 8px
+                border-radius: 50%
+                background-color: $gold
+                top: 2px
+                left: 2px
+
+            & + .survey__bg
+                border: 2px solid $gold
+                border-radius: 16px
+                padding: 18px 44px
+                color: $gold
+
+    &__button
+        padding: 15px
+        font-size: 24px
+        line-height: 35px
+        margin-top: 40px
+
+.form
+    margin: 24px auto 0
+    width: 320px
+    max-width: 100%
+
+    &__image
+        display: block
+        margin: 0 auto
+        filter: drop-shadow(0px 4px 40px rgba(0, 0, 0, 0.16))
+
+    form
+        background-color: $white
+        margin-top: 10px
+        margin-bottom: 40px
+        padding: 10px 44px 20px
+
+    &__prices
+        text-align: center
+        width: 100%
+        margin-bottom: 20px
+
+    &__price_new,&__price_old
+        display: block
+        font-size: 22px
+        font-weight: bold
+
+    &__price_old
+        color: $gold
+        text-decoration: line-through
+
+    &__select,&__input
+        width: 100%
+        border: 1px solid #E5E5E5
+        box-sizing: border-box
+        border-radius: 8px
+        padding: 12px 13px 9px
+        font-weight: bold;
+        font-size: 12px
+        line-height: 17px
+        text-align: center
+        text-align-last: center
+        color: #6A6A6A
+        margin-bottom: 16px
+
+    &__select
+        background: url(img/arrow.png) no-repeat
+            position: 96% 46%
+            size: 10px 10px
+        -webkit-appearance: none
+        -moz-appearance: none
+        text-indent: 1px
+        text-overflow: ''
+
+        &::-ms-expand
+            display: none
+
+.sidebar
+    display: none
+
+@media screen and (min-width: 572px)
+    .h1
+        font-size: 40px
+        line-height: 48px
+
+    .h2
+        font-size: 24px
+
+    .wrapper
+        max-width: 864px
+        margin: 0 auto
+
+    .comments
+        &__ava
+            width: 80px
+
+        &__name,&__text,&__date
+            padding: 0 0 0 112px   
+
+        &__text
+            min-height: 46px  
+
+    .form
+        width: 550px   
+        position: relative
+        margin: 120px auto
+
+        &__image
+            z-index: 1
+            position: absolute
+            left: -5px
+            top: -10px
+
+        form
+            max-width: 328px
+            margin-left: auto
+
+    .survey
+        max-width: 100%
+        position: relative
+        min-height: 688px
+        height: auto
+        margin: 24px auto 80px
+
+        &__item
+            width: 15%
+
+        &__counter
+            width: 6%
+
+        &__image
+            position: absolute
+            left: 0
+            top: 63px
+            width: 50%
+            height: calc(100% - 63px)
+            padding: 40px
+            border-radius: 0 0 0 8px
+
+        &__form
+            position: relative
+            right: -50%
+            top: 0
+            width: 50%
+            height: auto
+            min-height: 633px
+            padding: 40px
+            border-radius: 0 0 8px 0
+
+        &__question
+            font-size: 24px
+            line-height: 35px
+
+@media screen and (min-width: 992px)
+    .h1
+        margin-top: 0
+
+    .header
+        padding: 28px 80px
+
+        &__burger
+            display: none
+
+    .nav
+        display: block
+        list-style: none
+        position: absolute
+        top: 32px
+        right: 80px
+
+        &__item
+            display: inline-block
+            margin-right: 40px
+            
+            a
+                text-decoration: none
+
+            &:last-child
+                margin-right: 0
+
+            &:hover
+                a
+                    color: $gold
+
+            .nav__log
+                padding: 5px 16px
+                border: 1px solid $gold
+                border-radius: 16px 8px 8px 8px
+                color: $white
+
+                &:hover
+                    background-color: $gold
+                    color: $black   
+
+    .box
+        width: 100%
+        max-width: 1320px
+        display: flex
+        align-content: flex-start
+        padding: 56px 5px 0
+        margin: 0 auto
+
+    .content
+        padding-top: 0
+
+    .sidebar
+        display: block
+        width: 192px
+
+        &__item
+            text-decoration: none
+            color: $black
+
+            p
+                margin-top: 8px
+                margin-bottom: 24px
+
+            &:hover
+                text-decoration: underline
+
+        &__image
+            border-radius: 8px
+
+        &_right
+            display: none
+
+        &__product
+            width: 122px
+            margin-bottom: 16px
+
+        &__button
+            display: block
+            padding: 5px 16px 4px
+            max-width: 84px
+            margin: 0 auto
+            text-decoration: none
+
+    .comments
+        &__item
+            &:nth-child(-n+11)
+                display: block
+
+        &__text
+            min-height: 46px
+
+@media screen and (min-width: 1150px)
+    .sidebar
+        &_right
+            display: block
+            border-radius: 8px
+            background: $white
+            padding: 32px 35px
+            height: 324px
